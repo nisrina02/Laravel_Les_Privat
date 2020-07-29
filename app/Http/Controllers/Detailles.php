@@ -105,6 +105,12 @@ class Detailles extends Controller
      */
     public function destroy($id)
     {
-        //
+      $data = Detailles2::where('id', $id)->first();
+      if($data != null){
+        $data->delete();
+
+        return redirect()->route('detailles.index')->with('alert_message', 'Berhasil menghapus data!');
+      }
+      return redirect()->route('detailles.index')->with('alert_message', 'ID salah!');
     }
 }

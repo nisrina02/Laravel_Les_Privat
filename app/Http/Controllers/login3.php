@@ -33,6 +33,6 @@ class login3 extends Controller
   }
   public function logout(){
     Session::flush();
-    return redirect('login3');
+    return redirect('/interface');
   }
 }
