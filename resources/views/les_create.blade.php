@@ -40,24 +40,24 @@
 
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Nama Siswa</label>
-                            <input type="text" class="form-control" id="validationCustom01" placeholder="Nama Siswa" name="id_murid">
+                            <label for="validationCustom01">ID Siswa</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="" name="id_murid">
 
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Nama Guru</label>
-                            <input type="text" class="form-control" id="validationCustom01" placeholder="Nama Guru" name="id_guru">
+                            <label for="validationCustom01">ID Guru</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="" name="id_guru">
 
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Mata Pelajaran</label>
-                            <input type="text" class="form-control" id="validationCustom01" placeholder="Mata Pelajaran" name="id_mapel">
+                            <label for="validationCustom01">Kode Mapel</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="" name="id_mapel">
 
                         </div>
                       </div>
                     <button class="btn btn-primary" type="submit">KIRIM</button>
                 </form>
-              
+
 <div class="app-wrapper-footer">
 <div class="app-footer">
     <div class="app-footer__inner">

@@ -30,7 +30,7 @@
     <div class="card">
       <div class="header">
         <h2>
-          Daftar Siswa
+          Daftar Admin
         </h2>
       </div>
         <div class="body table-responsive">
