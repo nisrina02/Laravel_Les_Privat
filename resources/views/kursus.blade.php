@@ -4,9 +4,9 @@
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
-                <div class="page-title-heading">
-                    <div>Selamat Datang di Les Privat {{ Session::get('nama') }}</div>
-                </div>
+              <div class="page-title-heading">
+                  <div>Selamat Datang di Les Privat {{ Session::get('nama') }}</div>
+              </div>
                 <div class="page-title-actions">
                     <div class="d-inline-block dropdown">
                     </div>
@@ -27,7 +27,7 @@
     <div class="card">
       <div class="header">
         <h2>
-          Daftar Guru
+          Daftar Les
         </h2>
       </div>
         <div class="body table-responsive">
@@ -35,14 +35,12 @@
             <thead>
               <tr>
                 <th>No.</th>
-                <th>NIP</th>
+                <th>Kode Les</th>
+                <th>Nama Siswa</th>
                 <th>Nama Guru</th>
-                <th>Nomor Telepon</th>
-                <th>Alamat</th>
-                <th>Email</th>
-                <?php if(Session::get('hak_akses')=="admin") {?>
+                <th>Mata Pelajaran</th>
+                <th>Jadwal</th>
                 <th>Aksi</th>
-                <?php } ?>
               </tr>
             </thead>
             <tbody>
@@ -51,27 +49,25 @@
               <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $datas->id }}</td>
-                <td>{{ $datas->nama_guru }}</td>
-                <td>{{ $datas->telp }}</td>
-                <td>{{ $datas->alamat }}</td>
-                <td>{{ $datas->email }}</td>
-                <?php if(Session::get('hak_akses')=="admin") {?>
+                <td>{{ $datas->nama_murid}}</td>
+                <td>{{ $datas->nama_guru}}</td>
+                <td>{{ $datas->nama_mapel}}</td>
+                <td>{{ $datas->jadwal}}</td>
                 <td>
-                  <form action="{{ route('guru.destroy', $datas->id )}}" method="post">
+
+                  <form action="{{ route('detailles.destroy', $datas->id )}}" method="post">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <a href="{{ route('guru.edit', $datas->id) }}" class="btn btn-sm btn-primary">Edit</a>
                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Delete</button>
                   </form>
                 </td>
-                <?php } ?>
               </tr>
               @endforeach
             </tbody>
           </table>
-          <?php if(Session::get('hak_akses')=="admin") {?>
-          <a href="{{ route('guru.create') }}" class="btn btn-sm btn-success">Tambah Data</a>
-          <?php } ?>
+
+          <a href="{{ route('detailles.create') }}" class="btn btn-sm btn-success">Tambah Data</a>
+
         </div>
       </div>
     </div>

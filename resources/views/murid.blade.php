@@ -5,7 +5,7 @@
         <div class="app-page-title">
             <div class="page-title-wrapper">
                 <div class="page-title-heading">
-                    <div>Selamat Datang di Les Privat {{ Session::get('nama') }}
+                    <div>Selamat Datang di Les Privat {{ Session::get('nama_murid') }}
                         <div class="page-title-subheading">Ayo mulai belajar bersama kami
                         </div>
                     </div>
@@ -17,13 +17,50 @@
               </div>
         </div>
 
-
         <div class="row">
             <div class="col-md-12 col-lg-6">
                 <div class="mb-3 card">
-                </div>
+                  <div class="card-header-tab card-header">
+                      <div class="card-header-title">
+                          <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                          Your Profile
+                      </div>
+                  </div>
+                  <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div align="center">ID Siswa : {{ Session::get('id') }}</div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div align="center">Nama Lengkap : {{ Session::get('nama_murid') }}</div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div align="center">Alamat : {{ Session::get('alamat') }}</div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div align="center">Nomor Telepon : {{ Session::get('telp') }}</div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div align="center">Email : {{ Session::get('email') }}</div>
+                    </div>
+                  </div>
+
+              </div>
             </div>
         </div>
+
+
 
         <div class="row">
         </div>

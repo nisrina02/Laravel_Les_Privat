@@ -4,12 +4,9 @@
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
-                <div class="page-title-heading">
-                    <div>Selamat Datang di Les Privat {{ Session::get('nama') }}
-                        <div class="page-title-subheading">salurkan profesi kalian bersama kami
-                        </div>
-                    </div>
-                </div>
+              <div class="page-title-heading">
+                  <div>Selamat Datang di Les Privat {{ Session::get('nama') }}</div>
+              </div>
                 <div class="page-title-actions">
                     <div class="d-inline-block dropdown">
                     </div>
@@ -51,6 +48,10 @@
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Password</label>
                             <input type="password" class="form-control" id="validationCustom01" placeholder="Password" name="password" value="{{ $datas->password }}">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Status</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Status" name="hak_akses" value="{{ $datas->hak_akses }}">
                         </div>
                       </div>
                     <button class="btn btn-primary" type="submit">KIRIM</button>

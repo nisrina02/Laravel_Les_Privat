@@ -23,7 +23,10 @@ class login3 extends Controller
       Session::put('id', $proses->id);
       Session::put('email', $proses->email);
       Session::put('password', $proses->password);
-      Session::put('nama', $proses->nama);
+      Session::put('nama_guru', $proses->nama_guru);
+      Session::put('alamat', $proses->alamat);
+      Session::put('telp', $proses->telp);
+      Session::put('hak_akses', $proses->hak_akses);
       Session::put('login_status', true);
       return redirect('/dashguru');
     } else {

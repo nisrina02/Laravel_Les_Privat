@@ -23,8 +23,11 @@ class login2 extends Controller
       Session::put('id', $proses->id);
       Session::put('email', $proses->email);
       Session::put('password', $proses->password);
-      Session::put('nama', $proses->nama);
-      Session::put('login_status', true);
+      Session::put('nama_murid', $proses->nama_murid);
+      Session::put('alamat', $proses->alamat);
+      Session::put('telp', $proses->telp);
+      Session::put('hak_akses', $proses->hak_akses);
+      Session::put('login_status1', true);
       return redirect('/dashmurid');
     } else {
       Session::flash('alert_pesan', 'Username dan Password tidak cocok');

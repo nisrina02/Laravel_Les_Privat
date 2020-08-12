@@ -4,12 +4,9 @@
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
-                <div class="page-title-heading">
-                    <div>Selamat Datang di Les Privat {{ Session::get('nama') }}
-                        <div class="page-title-subheading">Ayo pilih pelajaran kesukaan kalian
-                        </div>
-                    </div>
-                </div>
+              <div class="page-title-heading">
+                  <div>Selamat Datang di Les Privat {{ Session::get('nama') }}</div>
+              </div>
                 <div class="page-title-actions">
                     <div class="d-inline-block dropdown">
                     </div>
@@ -54,11 +51,11 @@
               <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $datas->id }}</td>
-                <td>{{ $datas->id}}</td>
+                <td>{{ $datas->id_murid}}</td>
                 <td>{{ $datas->nama_murid}}</td>
-                <td>{{ $datas->id}}</td>
+                <td>{{ $datas->id_guru}}</td>
                 <td>{{ $datas->nama_guru}}</td>
-                <td>{{ $datas->id}}</td>
+                <td>{{ $datas->id_mapel}}</td>
                 <td>{{ $datas->nama_mapel}}</td>
                 <td>
 

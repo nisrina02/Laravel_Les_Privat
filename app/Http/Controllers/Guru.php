@@ -14,6 +14,10 @@ class Guru extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+      $this->middleware('cek_login');
+    }
+
     public function index()
     {
       $data = Guru2::all();
@@ -44,6 +48,7 @@ class Guru extends Controller
         'alamat' => 'required',
         'email' => 'required',
         'password' => 'required',
+        'hak_akses' => 'required',
       ]);
 
       $data = new Guru2();
@@ -52,6 +57,7 @@ class Guru extends Controller
       $data->alamat = $request->alamat;
       $data->email = $request->email;
       $data->password = md5($request->password);
+      $data->hak_akses = $request->hak_akses;
       $data->save();
 
       return redirect('/login3')->with('alert_pesan', 'berhasil menambah data');
@@ -95,6 +101,7 @@ class Guru extends Controller
         'alamat' => 'required',
         'email' => 'required',
         'password' => 'required',
+        'hak_akses' => 'required',
       ]);
 
       $data = Guru2::where('id', $id)->first();
@@ -103,6 +110,7 @@ class Guru extends Controller
       $data->alamat = $request->alamat;
       $data->email = $request->email;
       $data->password = md5($request->password);
+      $data->hak_akses = $request->hak_akses;
       $data->save();
 
       return redirect()->route('guru.index')->with('alert_message', 'Berhasil mengubah data!');

@@ -38,3 +38,5 @@ route::resource('/admin', 'Admin');
 route::resource('/guru', 'Guru');
 route::resource('/mapel', 'Mapel');
 route::resource('/detailles', 'Detailles');
+
+route::get('/kursus', 'kursus@index');

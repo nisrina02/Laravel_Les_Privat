@@ -4,12 +4,9 @@
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
-                <div class="page-title-heading">
-                    <div>Selamat Datang di Les Privat {{ Session::get('nama') }}
-                        <div class="page-title-subheading">Ayo pilih pelajaran kesukaan kalian
-                        </div>
-                    </div>
-                </div>
+              <div class="page-title-heading">
+                  <div>Selamat Datang di Les Privat {{ Session::get('nama') }}</div>
+              </div>
                 <div class="page-title-actions">
                     <div class="d-inline-block dropdown">
                     </div>
@@ -52,6 +49,11 @@
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Kode Mapel</label>
                             <input type="text" class="form-control" id="validationCustom01" placeholder="" name="id_mapel">
+
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Jadwal</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="" name="jadwal">
 
                         </div>
                       </div>

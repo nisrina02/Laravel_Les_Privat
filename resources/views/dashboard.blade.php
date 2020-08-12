@@ -414,29 +414,53 @@
                     </div>    <div class="scrollbar-sidebar">
                         <div class="app-sidebar__inner">
                             <ul class="vertical-nav-menu">
-                              <li class="app-sidebar__heading">Dashboard</li>
+                              <?php if(Session::get('hak_akses')=="admin") {?>
+                              <li class="app-sidebar__heading"><a href="{{ url('/dash') }}">Dashboard</a></li>
+                              <?php } ?>
+
+                              <?php if(Session::get('hak_akses')=="murid") {?>
+                              <li class="app-sidebar__heading"><a href="{{ url('/dashmurid') }}">Dashboard</a></li>
+                              <?php } ?>
+
+                              <?php if(Session::get('hak_akses')=="guru") {?>
+                              <li class="app-sidebar__heading"><a href="{{ url('/dash') }}">Dashboard</a></li>
+                              <?php } ?>
                                 <li>
+                                  <?php if(Session::get('hak_akses')=="admin") {?>
                                     <a href="{{ route('admin.index') }}">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Data Admin
                                     </a>
+                                  <?php } ?>
                                 </li>
                                 <li>
+                                  <?php if(Session::get('hak_akses')=="admin") {?>
                                     <a href="{{ route('detailles.index')}}">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Data Les
                                     </a>
+                                  <?php } ?>
                                 </li>
                                 <li>
+                                  <?php if(Session::get('hak_akses')=="admin") {?>
                                     <a href="{{ route('murid.index') }}">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Data Murid
                                     </a>
+                                  <?php } ?>
                                 </li>
                                 <li>
+                                  <?php if(Session::get('hak_akses')!="guru") {?>
                                     <a href="{{ route('guru.index') }}">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Data Guru
+                                    </a>
+                                  <?php } ?>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/kursus') }}">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Kursus
                                     </a>
                                 </li>
                                 <li>

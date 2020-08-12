@@ -14,6 +14,10 @@ class Murid extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+      $this->middleware('login_cek');
+    }
+
     public function index()
     {
       $data = Murid2::all();
@@ -44,6 +48,7 @@ class Murid extends Controller
         'alamat' => 'required',
         'email' => 'required',
         'password' => 'required',
+        'hak_akses' => 'required',
       ]);
 
       $data = new Murid2();
@@ -52,6 +57,7 @@ class Murid extends Controller
       $data->alamat = $request->alamat;
       $data->email = $request->email;
       $data->password = md5($request->password);
+      $data->hak_akses = $request->hak_akses;
       $data->save();
 
       return redirect('/login2')->with('alert_pesan', 'berhasil menambah data');
@@ -95,6 +101,7 @@ class Murid extends Controller
         'alamat' => 'required',
         'email' => 'required',
         'password' => 'required',
+        'hak_akses' => 'required',
       ]);
 
       $data = Murid2::where('id', $id)->first();
@@ -103,6 +110,7 @@ class Murid extends Controller
       $data->alamat = $request->alamat;
       $data->email = $request->email;
       $data->password = md5($request->password);
+      $data->hak_akses = $request->hak_akses;
       $data->save();
 
       return redirect()->route('murid.index')->with('alert_message', 'Berhasil mengubah data!');

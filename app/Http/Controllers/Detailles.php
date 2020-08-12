@@ -24,8 +24,8 @@ class Detailles extends Controller
       ->join('murid', 'murid.id', '=', 'detailles.id_murid')
       ->join('guru', 'guru.id', '=', 'detailles.id_guru')
       ->join('mapel', 'mapel.id', '=', 'detailles.id_mapel')
-      ->select('murid.id', 'murid.nama_murid', 'guru.id', 'guru.nama_guru',
-               'mapel.id', 'mapel.nama_mapel')
+      ->select('detailles.id', 'detailles.id_murid', 'murid.nama_murid', 'detailles.id_guru', 'guru.nama_guru',
+               'detailles.id_mapel', 'mapel.nama_mapel')
       ->get();
       return view('les', compact('data'));
     }
@@ -52,12 +52,14 @@ class Detailles extends Controller
         'id_murid' => 'required',
         'id_guru' => 'required',
         'id_mapel' => 'required',
+        'jadwal' => 'required',
       ]);
 
       $data = new Detailles2();
       $data->id_murid = $request->id_murid;
       $data->id_guru = $request->id_guru;
       $data->id_mapel = $request->id_mapel;
+      $data->jadwal = $request->jadwal;
       $data->save();
 
       return redirect()->route('detailles.index')->with('alert_message', 'Berhasil menambahkan data!');

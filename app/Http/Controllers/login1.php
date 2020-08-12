@@ -24,6 +24,7 @@ class login1 extends Controller
       Session::put('email', $proses->email);
       Session::put('password', $proses->password);
       Session::put('nama', $proses->nama);
+      Session::put('hak_akses', $proses->hak_akses);
       Session::put('login_status', true);
       return redirect('/dash');
     } else {
